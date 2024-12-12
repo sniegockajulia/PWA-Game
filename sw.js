@@ -7,6 +7,7 @@ const urlsToCache = [
   '/Character.js',
   '/Player.js',
   '/Opponent.js',
+  '/Boss.js',
   '/Shot.js',
   '/main.js',
   '/game.css',
@@ -21,7 +22,7 @@ const urlsToCache = [
   '/assets/shot2.png',
   '/assets/you_win.png',
   '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png
+  '/icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
