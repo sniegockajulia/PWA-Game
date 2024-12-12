@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 );
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('/PWA-game/sw.js')
     .then(registration => {
       console.log('Service Worker registered successfully:', registration);
     })
