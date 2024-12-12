@@ -1,7 +1,7 @@
 {
   "name": "Shooter Game PWA",
   "short_name": "Shooter",
-  "start_url": "/PWA-Game/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
