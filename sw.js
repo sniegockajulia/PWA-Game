@@ -19,7 +19,9 @@ const urlsToCache = [
   '/assets/player_dead.png',
   '/assets/shot1.png',
   '/assets/shot2.png',
-  '/assets/you_win.png'
+  '/assets/you_win.png',
+  '/icons/icon-192x192',
+  '/icons/icon-512x512
 ];
 
 self.addEventListener('install', event => {
