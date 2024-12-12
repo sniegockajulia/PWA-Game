@@ -36,3 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
         game.start();
     }
 );
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(registration => {
+      console.log('Service Worker registered successfully:', registration);
+    })
+    .catch(error => {
+      console.error('Error registering Service Worker:', error);
+    });
+}
