@@ -30,15 +30,12 @@ function collision (div1, div2) {
     return !(a.bottom < b.top || a.top > b.bottom || a.right < b.left || a.left > b.right);
 
 }
+
 var game;
-document.addEventListener("DOMContentLoaded", () => {
-        game = new Game();
-        game.start();
-    }
-);
+let deferredPrompt;
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/PWA-Game/sw.js')
+  navigator.serviceWorker.register('/sw.js')
     .then(registration => {
       console.log('Service Worker registered successfully:', registration);
     })
@@ -47,23 +44,27 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-let deferredPrompt;
-const installButton = document.getElementById('installButton');
+document.addEventListener("DOMContentLoaded", () => {
+        game = new Game();
+        game.start();
+        const installButton = document.getElementById("installButton");
  
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installButton.style.display = 'block';
- 
-  installButton.addEventListener('click', () => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted installation');
-      } else {
-        console.log('User declined installation');
-      }
-      deferredPrompt = null;
-    });
-  });
-});
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+
+
+          installButton.addEventListener('click', () => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+              if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted installation');
+              } else {
+                console.log('User declined installation');
+              }
+              deferredPrompt = null;
+            });
+          });
+        });
+    }
+);
