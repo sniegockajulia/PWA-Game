@@ -21,8 +21,8 @@ const urlsToCache = [
   '/assets/shot1.png',
   '/assets/shot2.png',
   '/assets/you_win.png',
-  'https://cdn.glitch.global/8f80c32b-0f56-4226-ad33-10b96d9f6fad/icons%2Ficon-192x192.png?v=1734211426495',
-  'https://cdn.glitch.global/8f80c32b-0f56-4226-ad33-10b96d9f6fad/icons%2Ficon-512x512.png?v=1734211426495'
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
