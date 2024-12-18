@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
           e.preventDefault();
           deferredPrompt = e;
 
-
           installButton.addEventListener('click', () => {
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
